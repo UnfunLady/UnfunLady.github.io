@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          我的SpringBoot项目 - 曾裕的博客
+          vue3根据用户名生成水印 - 曾裕的博客
         
     </title>
 
-    <link rel="canonical" href="http://yoursite-url/2023/03/04/reactApp_backEnd/">
+    <link rel="canonical" href="http://yoursite-url/2022/09/08/vuebj2/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -69,7 +69,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('springboot.jpg')
+            background-image: url('null')
             /*post*/
         
     }
@@ -90,18 +90,14 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#MySql" title="MySql">MySql</a>
-                            
-                              <a class="tag" href="/tags/#SpringBoot" title="SpringBoot">SpringBoot</a>
-                            
-                              <a class="tag" href="/tags/#MyBatisPlus" title="MyBatisPlus">MyBatisPlus</a>
+                              <a class="tag" href="/tags/#Vue3" title="Vue3">Vue3</a>
                             
                         </div>
-                        <h1>我的SpringBoot项目</h1>
-                        <h2 class="subheading">实习之余学习的作品.</h2>
+                        <h1>vue3根据用户名生成水印</h1>
+                        <h2 class="subheading">学习经验</h2>
                         <span class="meta">
                             Posted by Zeng Yu on
-                            2023-03-04
+                            2022-09-08
                         </span>
                     </div>
                 
@@ -218,44 +214,9 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h2><span id="编码语言">编码语言</span></h2>
-<blockquote>
-<p>该项目是后台项目 主要使用的编程语言是 SpringBoot, 以及MybatisPlus+MySql开发</p>
-</blockquote>
+                <h3><span id="详细代码">详细代码</span></h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">// 生成背景</span><br><span class="line">  watch(user, (newValue, oldValue) =&gt; &#123;</span><br><span class="line">    // 如果有用户名</span><br><span class="line">    <span class="keyword">if</span> (user.userInfo.userList.userInfo[<span class="string">'nickname'</span>] != undefined) &#123;</span><br><span class="line">      // 根据用户名字和账号绘制背景图</span><br><span class="line">      // 作者：https://www.cnblogs.com/lulu-beibei/p/15918996.html</span><br><span class="line">      var drawAndShareImage = <span class="keyword">function</span> (text: string, text1: string, callback: Function) &#123;</span><br><span class="line">        var canvas = document.createElement(<span class="string">'canvas'</span>)</span><br><span class="line">        canvas.width = 570</span><br><span class="line">        canvas.height = 200</span><br><span class="line">        var context = canvas.getContext(<span class="string">'2d'</span>)</span><br><span class="line">        context.rect(0, 0, canvas.width, canvas.height)</span><br><span class="line">        var h = null</span><br><span class="line">        var w = null</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; 2; i++) &#123;</span><br><span class="line">          <span class="keyword">if</span> (i === 0) &#123;</span><br><span class="line">            w = 0</span><br><span class="line">            h = 70</span><br><span class="line">          &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i === 1) &#123;</span><br><span class="line">            w = 250</span><br><span class="line">            h = 120</span><br><span class="line">          &#125;</span><br><span class="line">          context.rotate((-8 * Math.PI) / 180) // 水印初始偏转角度</span><br><span class="line">          context.font = <span class="string">'14px microsoft yahei'</span></span><br><span class="line">          context.fillStyle = <span class="string">'rgba(0, 0, 0, .15)'</span></span><br><span class="line">          var mainText = text + <span class="string">'('</span> + text1 + <span class="string">')'</span></span><br><span class="line">          context.fillText(mainText, w, h)</span><br><span class="line">          context.rotate((8 * Math.PI) / 180) // 把水印偏转角度调整为原来的，不然他会一直转</span><br><span class="line">        &#125;</span><br><span class="line">        callback(canvas.toDataURL(<span class="string">'image/png'</span>))</span><br><span class="line">      &#125;</span><br><span class="line">      var div1 = document.createElement(<span class="string">'div'</span>)</span><br><span class="line">      div1.className = <span class="string">'needNameDw'</span></span><br><span class="line">      document.getElementById(<span class="string">'app'</span>).appendChild(div1)</span><br><span class="line">      const img = document.getElementsByClassName(<span class="string">'needNameDw'</span>)[0]</span><br><span class="line">      drawAndShareImage(user.userInfo.userList.userInfo[<span class="string">'nickname'</span>], user.userInfo.userList.userInfo[<span class="string">'username'</span>], (url: string) =&gt; &#123;</span><br><span class="line">        // 需要覆盖所有dom 加上z-index: 9999;</span><br><span class="line">        img.setAttribute(<span class="string">'style'</span>, <span class="string">'background:url("'</span> + url + <span class="string">'");position: absolute;top: 0;left: 0;width: 100%;height: 100%;pointer-events: none;'</span>)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, &#123; immediate: <span class="literal">true</span>, deep: <span class="literal">true</span> &#125;)</span><br></pre></td></tr></table></figure>
 <hr>
-<h2><span id="项目介绍">项目介绍</span></h2>
-<hr>
-<p>使用 <code>Springboot</code> 开发的后端,采用<code>MybatisPlus</code>框架实现后端部分sql自动生成，Mysql编写触发器等</p>
-<blockquote>
-<p>技术栈: Springboot、Mysql、postman、MybatisPlus</p>
-</blockquote>
-<blockquote>
-<p>职责描述:<br>
-1.使用SpringBoot完成后端，使用JWT实现以及自定义注解拦截器实现登录Token验证用户信息<br>
-2.使用MybatisPlus对简单的sql处理节省编写sql时间<br>
-3.使用mysql触发器对一些需要联动修改的实体类进行联动<br>
-4.编写sql语句，对复杂的多表进行联合查找，返回接口信息</p>
-</blockquote>
-<h2><span id="初始化">初始化</span></h2>
-<hr>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://github.com/UnfunLady/reactApp_backend.git ./backend</span><br><span class="line">打开项目等待依赖环境下载完毕 运行springboot项目 注意：先修改mybatisplus的配置</span><br><span class="line">修改数据库名 端口号等与你的环境一致即可</span><br></pre></td></tr></table></figure>
-<h2><span id="运行环境参考">运行环境(参考)</span></h2>
-<blockquote>
-<p>Mysql-version:<strong>8.0+</strong>、springboot</p>
-</blockquote>
-<h2><span id="运行步骤">运行步骤</span></h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.一般使用 `IDE编辑器` 打开后台项目</span><br><span class="line">2.运行Navicat 或者 sqlyog等工具方便对数据表进行导入</span><br><span class="line">2.运行项目 等待后端项目启动</span><br></pre></td></tr></table></figure>
-<h2><span id="项目部分截图">项目部分截图</span></h2>
-<div style="display:flex;width:100%;flex-wrap:wrap">
-<img src="../reactApp_backEnd/spring1.jpg">
-<img src="../reactApp_backEnd/spring2.jpg">
-</div>
-<h2><span id="结束">结束</span></h2>
-<hr>
-<!-- Place this tag in your head or just before your close body tag. -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
-<!-- Place this tag where you want the button to render. -->
-<p>如果喜欢的话请给我的项目 <a class="github-button" href="https://github.com/UnfunLady/reactApp_backend.git" data-icon="octicon-star" aria-label="Star UnfunLady/uni-app on GitHub" target="_blank" rel="noopener">Star~</a></p>
 
                 
 
@@ -264,12 +225,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2023/03/05/reactApp/" data-toggle="tooltip" data-placement="top" title="[易企通]我的React项目">&larr; 上一个</a>
+                            <a href="/2022/09/11/vuebj3/" data-toggle="tooltip" data-placement="top" title="Vue3 Pinia基本用法">&larr; 上一个</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2022/10/05/vue3/" data-toggle="tooltip" data-placement="top" title="Vue3项目">下一个 &rarr;</a>
+                            <a href="/2022/09/05/reactbj1/" data-toggle="tooltip" data-placement="top" title="react自定义hook拦截路由">下一个 &rarr;</a>
                         </li>
                     
                 </ul>
@@ -295,7 +256,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">编码语言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">项目介绍</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">初始化</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">运行环境(参考)</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">运行步骤</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">项目部分截图</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">结束</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">详细代码</span></a></li></ol>
         
         </div>
       </aside>
@@ -315,11 +276,7 @@
                     <h5><a href="/tags/">知识标签</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#MySql" title="MySql">MySql</a>
-                        
-                          <a class="tag" href="/tags/#SpringBoot" title="SpringBoot">SpringBoot</a>
-                        
-                          <a class="tag" href="/tags/#MyBatisPlus" title="MyBatisPlus">MyBatisPlus</a>
+                          <a class="tag" href="/tags/#Vue3" title="Vue3">Vue3</a>
                         
                     </div>
                 </section>

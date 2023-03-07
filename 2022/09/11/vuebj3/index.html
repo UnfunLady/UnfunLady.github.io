@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          我的SpringBoot项目 - 曾裕的博客
+          Vue3 Pinia基本用法 - 曾裕的博客
         
     </title>
 
-    <link rel="canonical" href="http://yoursite-url/2023/03/04/reactApp_backEnd/">
+    <link rel="canonical" href="http://yoursite-url/2022/09/11/vuebj3/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -69,7 +69,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('springboot.jpg')
+            background-image: url('null')
             /*post*/
         
     }
@@ -90,18 +90,14 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#MySql" title="MySql">MySql</a>
-                            
-                              <a class="tag" href="/tags/#SpringBoot" title="SpringBoot">SpringBoot</a>
-                            
-                              <a class="tag" href="/tags/#MyBatisPlus" title="MyBatisPlus">MyBatisPlus</a>
+                              <a class="tag" href="/tags/#Vue3" title="Vue3">Vue3</a>
                             
                         </div>
-                        <h1>我的SpringBoot项目</h1>
-                        <h2 class="subheading">实习之余学习的作品.</h2>
+                        <h1>Vue3 Pinia基本用法</h1>
+                        <h2 class="subheading">学习经验.</h2>
                         <span class="meta">
                             Posted by Zeng Yu on
-                            2023-03-04
+                            2022-09-11
                         </span>
                     </div>
                 
@@ -218,44 +214,9 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h2><span id="编码语言">编码语言</span></h2>
-<blockquote>
-<p>该项目是后台项目 主要使用的编程语言是 SpringBoot, 以及MybatisPlus+MySql开发</p>
-</blockquote>
+                <h2><span id="详细代码">详细代码</span></h2>
+ <figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">// ----app.vue-----</span><br><span class="line">// import &#123; createPinia &#125; <span class="keyword">from</span> 'pinia'</span><br><span class="line">// import &#123; usePersist &#125; <span class="keyword">from</span> 'pinia-use-persist'</span><br><span class="line">// pinia.use(usePersist);</span><br><span class="line">// app.use(pinia).xxxxxxx</span><br><span class="line"></span><br><span class="line">import &#123; defineStore &#125; <span class="keyword">from</span> <span class="string">"pinia"</span>;</span><br><span class="line">interface <span class="keyword">user</span>Info &#123;</span><br><span class="line">  isLogin: boolean,</span><br><span class="line">  <span class="keyword">user</span>Token: string | number,</span><br><span class="line">  <span class="keyword">user</span>Info: []</span><br><span class="line">&#125;</span><br><span class="line">class <span class="keyword">user</span>Init &#123;</span><br><span class="line">  <span class="keyword">user</span>List: <span class="keyword">user</span>Info = &#123;</span><br><span class="line">    isLogin: false,</span><br><span class="line">    <span class="keyword">user</span>Token: localStorage.getItem('<span class="keyword">user</span>Token') || '',</span><br><span class="line">    <span class="keyword">user</span>Info: []</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 导出<span class="keyword">user</span></span><br><span class="line">export <span class="keyword">default</span> defineStore(<span class="string">"user"</span>, &#123;</span><br><span class="line">  <span class="keyword">state</span>: () =&gt; &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      <span class="keyword">user</span>Info: new <span class="keyword">user</span>Init()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  actions: &#123;</span><br><span class="line">    <span class="built_in">set</span>Token(token: string) &#123;</span><br><span class="line">      this.<span class="keyword">user</span>Info.<span class="keyword">user</span>List.<span class="keyword">user</span>Token = token;</span><br><span class="line">      // localStorage.<span class="built_in">set</span>Item('<span class="keyword">user</span>Token', token);</span><br><span class="line">      this.<span class="keyword">user</span>Info.<span class="keyword">user</span>List.isLogin = true;</span><br><span class="line">    &#125;,</span><br><span class="line">    // 设置用户信息</span><br><span class="line">    <span class="built_in">set</span>UserInfo(<span class="keyword">user</span>Info: []) &#123;</span><br><span class="line">      this.<span class="keyword">user</span>Info.<span class="keyword">user</span>List.<span class="keyword">user</span>Info = <span class="keyword">user</span>Info;</span><br><span class="line">      // localStorage.<span class="built_in">set</span>Item('<span class="keyword">user</span>LoginInfo', JSON.stringify(<span class="keyword">user</span>Info))</span><br><span class="line">    &#125;,</span><br><span class="line">    // 退出登录</span><br><span class="line">    <span class="keyword">user</span>Out() &#123;</span><br><span class="line">      this.<span class="keyword">user</span>Info.<span class="keyword">user</span>List = &#123;</span><br><span class="line">        isLogin: false,</span><br><span class="line">        <span class="keyword">user</span>Token: '',</span><br><span class="line">        <span class="keyword">user</span>Info: []</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  getters: &#123;</span><br><span class="line">    // 获取token</span><br><span class="line">    getUserToken(<span class="keyword">state</span>) &#123;</span><br><span class="line">      return <span class="keyword">state</span>.<span class="keyword">user</span>Info.<span class="keyword">user</span>List.<span class="keyword">user</span>Token</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  persist: &#123;</span><br><span class="line">    enabled: true,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <hr>
-<h2><span id="项目介绍">项目介绍</span></h2>
-<hr>
-<p>使用 <code>Springboot</code> 开发的后端,采用<code>MybatisPlus</code>框架实现后端部分sql自动生成，Mysql编写触发器等</p>
-<blockquote>
-<p>技术栈: Springboot、Mysql、postman、MybatisPlus</p>
-</blockquote>
-<blockquote>
-<p>职责描述:<br>
-1.使用SpringBoot完成后端，使用JWT实现以及自定义注解拦截器实现登录Token验证用户信息<br>
-2.使用MybatisPlus对简单的sql处理节省编写sql时间<br>
-3.使用mysql触发器对一些需要联动修改的实体类进行联动<br>
-4.编写sql语句，对复杂的多表进行联合查找，返回接口信息</p>
-</blockquote>
-<h2><span id="初始化">初始化</span></h2>
-<hr>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://github.com/UnfunLady/reactApp_backend.git ./backend</span><br><span class="line">打开项目等待依赖环境下载完毕 运行springboot项目 注意：先修改mybatisplus的配置</span><br><span class="line">修改数据库名 端口号等与你的环境一致即可</span><br></pre></td></tr></table></figure>
-<h2><span id="运行环境参考">运行环境(参考)</span></h2>
-<blockquote>
-<p>Mysql-version:<strong>8.0+</strong>、springboot</p>
-</blockquote>
-<h2><span id="运行步骤">运行步骤</span></h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.一般使用 `IDE编辑器` 打开后台项目</span><br><span class="line">2.运行Navicat 或者 sqlyog等工具方便对数据表进行导入</span><br><span class="line">2.运行项目 等待后端项目启动</span><br></pre></td></tr></table></figure>
-<h2><span id="项目部分截图">项目部分截图</span></h2>
-<div style="display:flex;width:100%;flex-wrap:wrap">
-<img src="../reactApp_backEnd/spring1.jpg">
-<img src="../reactApp_backEnd/spring2.jpg">
-</div>
-<h2><span id="结束">结束</span></h2>
-<hr>
-<!-- Place this tag in your head or just before your close body tag. -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
-<!-- Place this tag where you want the button to render. -->
-<p>如果喜欢的话请给我的项目 <a class="github-button" href="https://github.com/UnfunLady/reactApp_backend.git" data-icon="octicon-star" aria-label="Star UnfunLady/uni-app on GitHub" target="_blank" rel="noopener">Star~</a></p>
 
                 
 
@@ -264,12 +225,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2023/03/05/reactApp/" data-toggle="tooltip" data-placement="top" title="[易企通]我的React项目">&larr; 上一个</a>
+                            <a href="/2022/10/05/vue3/" data-toggle="tooltip" data-placement="top" title="Vue3项目">&larr; 上一个</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2022/10/05/vue3/" data-toggle="tooltip" data-placement="top" title="Vue3项目">下一个 &rarr;</a>
+                            <a href="/2022/09/08/vuebj2/" data-toggle="tooltip" data-placement="top" title="vue3根据用户名生成水印">下一个 &rarr;</a>
                         </li>
                     
                 </ul>
@@ -295,7 +256,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">编码语言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">项目介绍</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">初始化</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">运行环境(参考)</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">运行步骤</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">项目部分截图</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">结束</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">详细代码</span></a></li></ol>
         
         </div>
       </aside>
@@ -315,11 +276,7 @@
                     <h5><a href="/tags/">知识标签</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#MySql" title="MySql">MySql</a>
-                        
-                          <a class="tag" href="/tags/#SpringBoot" title="SpringBoot">SpringBoot</a>
-                        
-                          <a class="tag" href="/tags/#MyBatisPlus" title="MyBatisPlus">MyBatisPlus</a>
+                          <a class="tag" href="/tags/#Vue3" title="Vue3">Vue3</a>
                         
                     </div>
                 </section>

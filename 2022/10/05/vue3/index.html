@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          我的SpringBoot项目 - 曾裕的博客
+          Vue3项目 - 曾裕的博客
         
     </title>
 
-    <link rel="canonical" href="http://yoursite-url/2023/03/04/reactApp_backEnd/">
+    <link rel="canonical" href="http://yoursite-url/2022/10/05/vue3/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -69,7 +69,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('springboot.jpg')
+            background-image: url('vue.jpg')
             /*post*/
         
     }
@@ -90,18 +90,18 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#MySql" title="MySql">MySql</a>
+                              <a class="tag" href="/tags/#Vue" title="Vue">Vue</a>
                             
-                              <a class="tag" href="/tags/#SpringBoot" title="SpringBoot">SpringBoot</a>
+                              <a class="tag" href="/tags/#Mysql" title="Mysql">Mysql</a>
                             
-                              <a class="tag" href="/tags/#MyBatisPlus" title="MyBatisPlus">MyBatisPlus</a>
+                              <a class="tag" href="/tags/#Nodejs" title="Nodejs">Nodejs</a>
                             
                         </div>
-                        <h1>我的SpringBoot项目</h1>
-                        <h2 class="subheading">实习之余学习的作品.</h2>
+                        <h1>Vue3项目</h1>
+                        <h2 class="subheading">学习Vue3的作品.</h2>
                         <span class="meta">
                             Posted by Zeng Yu on
-                            2023-03-04
+                            2022-10-05
                         </span>
                     </div>
                 
@@ -220,42 +220,48 @@
 
                 <h2><span id="编码语言">编码语言</span></h2>
 <blockquote>
-<p>该项目是后台项目 主要使用的编程语言是 SpringBoot, 以及MybatisPlus+MySql开发</p>
+<p>该项目是后台项目 主要使用的编程语言是 <a href="https://github.com/vuejs/vue.git" target="_blank" rel="noopener">Vue.js</a>, 小部分组件库使用了 <a href="https://element-plus.gitee.io/zh-CN/component/button.html" target="_blank" rel="noopener">ElementPlus</a> 开发<br>
+后台项目使用Nodejs的Express框架开发</p>
 </blockquote>
 <hr>
 <h2><span id="项目介绍">项目介绍</span></h2>
 <hr>
-<p>使用 <code>Springboot</code> 开发的后端,采用<code>MybatisPlus</code>框架实现后端部分sql自动生成，Mysql编写触发器等</p>
+<p>使用 <code>Vue3</code> 开发的为企业管理人员设计的系统,大部分使用Element组件库实现UI搭建,<br>
+后端采用<code>Nodejs</code>框架实现后端接口，简化平时操作流程，可以完成绝大部分管理需求。</p>
 <blockquote>
-<p>技术栈: Springboot、Mysql、postman、MybatisPlus</p>
+<p>技术栈: Vue3、pinia、Echarts、ElementPlus、Nodejs、Mysql</p>
 </blockquote>
 <blockquote>
 <p>职责描述:<br>
-1.使用SpringBoot完成后端，使用JWT实现以及自定义注解拦截器实现登录Token验证用户信息<br>
-2.使用MybatisPlus对简单的sql处理节省编写sql时间<br>
-3.使用mysql触发器对一些需要联动修改的实体类进行联动<br>
-4.编写sql语句，对复杂的多表进行联合查找，返回接口信息</p>
+1.使用Nodejs完成后端，使用JWT实现登录Token 自定义中间件实现Token验证<br>
+2.使用ElementPlus组件库从0到1搭建页面布局，使用Vue3以及TypeScript实现UI页面<br>
+3.使用Pinia对登录信息持久化存储。upload组件实现图片上传<br>
+4.通过Echarts渲染企业信息及员工打卡各项信息实现可视化数据。<br>
+5.封装复用组件，对上传图片进行压缩</p>
 </blockquote>
 <h2><span id="初始化">初始化</span></h2>
 <hr>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://github.com/UnfunLady/reactApp_backend.git ./backend</span><br><span class="line">打开项目等待依赖环境下载完毕 运行springboot项目 注意：先修改mybatisplus的配置</span><br><span class="line">修改数据库名 端口号等与你的环境一致即可</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/UnfunLady/Vue3_practice.git ./Vuets</span><br><span class="line"><span class="built_in">cd</span> Vuets</span><br><span class="line">npm install or npm i</span><br><span class="line">将项目里的Mysql文件导入至你的数据库  并准备运行后台</span><br></pre></td></tr></table></figure>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">修改<span class="keyword">backend下的db文件的数据库名 </span>端口号等与你的环境一致即可</span><br><span class="line"><span class="symbol">npm</span> start运行nodejs后台</span><br></pre></td></tr></table></figure>
 <h2><span id="运行环境参考">运行环境(参考)</span></h2>
 <blockquote>
-<p>Mysql-version:<strong>8.0+</strong>、springboot</p>
+<p>Nodejs-version:<strong>v14.17.3</strong>、Npm-version:<strong>v6.14.13</strong>、Mysql-version:<strong>8.0+</strong>、</p>
 </blockquote>
 <h2><span id="运行步骤">运行步骤</span></h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.一般使用 `IDE编辑器` 打开后台项目</span><br><span class="line">2.运行Navicat 或者 sqlyog等工具方便对数据表进行导入</span><br><span class="line">2.运行项目 等待后端项目启动</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.一般使用 `Vscode` 打开后台项目及前台项目</span><br><span class="line">2.运行项目 等待后端项目启动 npm start</span><br><span class="line">3.打开前端项目 npm run serve</span><br><span class="line">4.运行项目 等待前端项目启动</span><br></pre></td></tr></table></figure>
 <h2><span id="项目部分截图">项目部分截图</span></h2>
 <div style="display:flex;width:100%;flex-wrap:wrap">
-<img src="../reactApp_backEnd/spring1.jpg">
-<img src="../reactApp_backEnd/spring2.jpg">
+<img src="../vue3/vue1.jpg">
+<img src="../vue3/vue2.jpg">
+<img src="../vue3/vue3.jpg">
+<img src="../vue3/vue4.jpg">
 </div>
 <h2><span id="结束">结束</span></h2>
 <hr>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <!-- Place this tag where you want the button to render. -->
-<p>如果喜欢的话请给我的项目 <a class="github-button" href="https://github.com/UnfunLady/reactApp_backend.git" data-icon="octicon-star" aria-label="Star UnfunLady/uni-app on GitHub" target="_blank" rel="noopener">Star~</a></p>
+<p>如果喜欢的话请给我的项目 <a class="github-button" href="https://github.com/UnfunLady/Vue3_practice.git" data-icon="octicon-star" aria-label="Star UnfunLady/uni-app on GitHub" target="_blank" rel="noopener">Star~</a></p>
 
                 
 
@@ -264,12 +270,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2023/03/05/reactApp/" data-toggle="tooltip" data-placement="top" title="[易企通]我的React项目">&larr; 上一个</a>
+                            <a href="/2023/03/04/reactApp_backEnd/" data-toggle="tooltip" data-placement="top" title="我的SpringBoot项目">&larr; 上一个</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2022/10/05/vue3/" data-toggle="tooltip" data-placement="top" title="Vue3项目">下一个 &rarr;</a>
+                            <a href="/2022/09/11/vuebj3/" data-toggle="tooltip" data-placement="top" title="Vue3 Pinia基本用法">下一个 &rarr;</a>
                         </li>
                     
                 </ul>
@@ -315,11 +321,11 @@
                     <h5><a href="/tags/">知识标签</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#MySql" title="MySql">MySql</a>
+                          <a class="tag" href="/tags/#Vue" title="Vue">Vue</a>
                         
-                          <a class="tag" href="/tags/#SpringBoot" title="SpringBoot">SpringBoot</a>
+                          <a class="tag" href="/tags/#Mysql" title="Mysql">Mysql</a>
                         
-                          <a class="tag" href="/tags/#MyBatisPlus" title="MyBatisPlus">MyBatisPlus</a>
+                          <a class="tag" href="/tags/#Nodejs" title="Nodejs">Nodejs</a>
                         
                     </div>
                 </section>

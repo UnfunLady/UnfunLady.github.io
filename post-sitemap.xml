@@ -7,8 +7,8 @@
     </url>
 
     <url>
-        <loc>http://yoursite-url/2022/09/03/vuebj1/</loc>
-        <lastmod>2023-03-07T08:22:28.463Z</lastmod>
+        <loc>http://yoursite-url/2022/10/05/vue3/</loc>
+        <lastmod>2023-03-07T10:55:09.526Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,15 +16,31 @@
 
     <url>
         <loc>http://yoursite-url/2022/09/05/reactbj1/</loc>
-        <lastmod>2023-03-07T08:21:03.598Z</lastmod>
+        <lastmod>2023-03-07T10:54:13.746Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>http://yoursite-url/2022/09/05/vue3/</loc>
-        <lastmod>2023-03-07T07:53:14.513Z</lastmod>
+        <loc>http://yoursite-url/2022/09/11/vuebj3/</loc>
+        <lastmod>2023-03-07T10:53:53.669Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite-url/2022/09/08/vuebj2/</loc>
+        <lastmod>2023-03-07T10:46:04.685Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite-url/2022/09/03/vuebj1/</loc>
+        <lastmod>2023-03-07T08:22:28.463Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

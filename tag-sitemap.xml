@@ -37,36 +37,36 @@
     </url>
 
     <url>
-        <loc>http://yoursite-url/tags/Vue/</loc>
-        <lastmod>2023-03-07T07:53:14.513Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite-url/tags/Mysql/</loc>
-        <lastmod>2023-03-07T07:53:14.513Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite-url/tags/Nodejs/</loc>
-        <lastmod>2023-03-07T07:53:14.513Z</lastmod>
+        <loc>http://yoursite-url/tags/Vue3/</loc>
+        <lastmod>2023-03-07T10:53:53.669Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite-url/tags/React/</loc>
-        <lastmod>2023-03-07T08:21:03.598Z</lastmod>
+        <lastmod>2023-03-07T10:54:13.746Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite-url/tags/Vue3/</loc>
-        <lastmod>2023-03-07T08:22:28.463Z</lastmod>
+        <loc>http://yoursite-url/tags/Vue/</loc>
+        <lastmod>2023-03-07T10:55:09.526Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite-url/tags/Mysql/</loc>
+        <lastmod>2023-03-07T10:55:09.526Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite-url/tags/Nodejs/</loc>
+        <lastmod>2023-03-07T10:55:09.526Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
