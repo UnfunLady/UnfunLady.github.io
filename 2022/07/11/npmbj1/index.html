@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          0.1+0.2为什么不等于0.3 - 曾裕的博客
+          Npm和Yarn和Pnpm的区别 - 曾裕的博客
         
     </title>
 
-    <link rel="canonical" href="http://yoursite-url/2022/11/21/jsbj9/">
+    <link rel="canonical" href="http://yoursite-url/2022/07/11/npmbj1/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -90,14 +90,14 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
+                              <a class="tag" href="/tags/#npm" title="npm">npm</a>
                             
                         </div>
-                        <h1>0.1+0.2为什么不等于0.3</h1>
+                        <h1>Npm和Yarn和Pnpm的区别</h1>
                         <h2 class="subheading">学习经验.</h2>
                         <span class="meta">
                             Posted by Zeng Yu on
-                            2022-11-21
+                            2022-07-11
                         </span>
                     </div>
                 
@@ -216,41 +216,32 @@
 
                 <h3><span id="笔记描述">笔记描述</span></h3>
 <blockquote>
-<p>在JS内部所有的计算都是二进制方式计算的 所以 0.1+ 0.2 时要先把 0.1和 0.2 从十进制转成二进制</p>
+<p>三种包管理工具的区别</p>
 </blockquote>
-<h3><span id="详细描述">详细描述</span></h3>
+<h3><span id="yarn">Yarn</span></h3>
 <blockquote>
-<p>0.1转化成二进制的算法：<br>
-0.1<em>2=0.2======取出整数部分0<br>
-0.2</em>2=0.4======取出整数部分0<br>
-0.4<em>2=0.8======取出整数部分0<br>
-0.8</em>2=1.6======取出整数部分1<br>
-0.6<em>2=1.2======取出整数部分1<br>
-接下来会无限循环<br>
-0.2</em>2=0.4======取出整数部分0<br>
-0.4<em>2=0.8======取出整数部分0<br>
-0.8</em>2=1.6======取出整数部分1<br>
-0.6*2=1.2======取出整数部分1</p>
+<p>Yarn</p>
 </blockquote>
-<p>所以0.1转化成二进制是：0.0001 1001 1001 1001…</p>
+<ul>
+<li>
+<p>并行安装：无论 npm 还是 Yarn 在执行包的安装时，都会执行一系列任务。npm 是按照队列执行每个 package，<br>
+也就是说必须要等到当前 package 安装完成之后，才能继续后面的安装。而 Yarn 是同步执行所有任务，提高了性能。</p>
+</li>
+<li>
+<p>离线模式：如果之前已经安装过一个软件包，用Yarn再次安装时之间从缓存中获取，就不用像npm那样再从网络下载了。</p>
+</li>
+<li>
+<p>Yarn 有一个锁定文件 (lock file) 记录了被确切安装上的模块的版本号。<br>
+每次只要新增了一个模块，Yarn 就会创建（或更新）yarn.lock 这个文件。这么做就保证了<br>
+每一次拉取同一个项目依赖时，使用的都是一样的模块版本。npm则会有歧义</p>
+</li>
+</ul>
+<h3><span id="pnpm">Pnpm</span></h3>
 <blockquote>
-<p>0.2转化成二进制的算法：<br>
-0.2<em>2=0.4======取出整数部分0<br>
-0.4</em>2=0.8======取出整数部分0<br>
-0.8<em>2=1.6======取出整数部分1<br>
-0.6</em>2=1.2======取出整数部分1<br>
-接下来会无限循环<br>
-0.2<em>2=0.4======取出整数部分0<br>
-0.4</em>2=0.8======取出整数部分0<br>
-0.8<em>2=1.6======取出整数部分1<br>
-0.6</em>2=1.2======取出整数部分1</p>
+<p>如果同一个 package 在我们本地的多个项目中使用，每次安装的时候它都会被重新下载一次<br>
+pnpm 内部使用基于内容寻址的文件系统来存储磁盘上所有的文件，同一个包 pnpm 只会安装一次，磁盘中只有一个地方写入</p>
 </blockquote>
-<p>所以0.2转化成二进制是：0.0011 0011 0011 0011…</p>
-<h3><span id="结论">结论</span></h3>
-<p>0.1+0.2 不等于 0.3 ，因为在 0.1+0.2 的计算过程中发生了两次精度丢失。第一次是在 0.1 和 0.2 转成双精度二进制浮点数时，由于二进制浮点数的小数位只能存储52位，导致小数点后第53位的数要进行为1则进1为0则舍去的操作，从而造成一次精度丢失。第二次在 0.1 和 0.2 转成二进制浮点数后，二进制浮点数相加的过程中，小数位相加导致小数位多出了一位，又要让第53位的数进行为1则进1为0则舍去的操作，又造成一次精度丢失。最终导致 0.1+0.2 不等于0.3</p>
-<p>0.1+0.2 不等于 0.3 会引起那些BUG ？<br>
-会引起统计页面展示错乱的BUG，还有 300.01 优惠300 元后，支付金额不足0.01 元等类似的BUG。</p>
-<h2><span id="可以用mathtofixed解决">可以用<code>Math.toFixed()</code>解决</span></h2>
+<hr>
 
                 
 
@@ -259,12 +250,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2022/12/25/reactbj2/" data-toggle="tooltip" data-placement="top" title="React路由默认选中高光">&larr; 上一个</a>
+                            <a href="/2022/08/05/Mysql/" data-toggle="tooltip" data-placement="top" title="Mysql踩坑记录">&larr; 上一个</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2022/11/02/jsbj6/" data-toggle="tooltip" data-placement="top" title="JS图片回显并下载">下一个 &rarr;</a>
+                            <a href="/2022/06/02/jsbj5/" data-toggle="tooltip" data-placement="top" title="JS统计出现最多的字符">下一个 &rarr;</a>
                         </li>
                     
                 </ul>
@@ -290,7 +281,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">笔记描述</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">详细描述</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">结论</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number"></span> <span class="toc-nav-text">可以用Math.toFixed()解决</span></a>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">笔记描述</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Yarn</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Pnpm</span></a></li></ol>
         
         </div>
       </aside>
@@ -310,7 +301,7 @@
                     <h5><a href="/tags/">知识标签</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
+                          <a class="tag" href="/tags/#npm" title="npm">npm</a>
                         
                     </div>
                 </section>

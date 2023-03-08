@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          0.1+0.2为什么不等于0.3 - 曾裕的博客
+          script标签 defer async区别 - 曾裕的博客
         
     </title>
 
-    <link rel="canonical" href="http://yoursite-url/2022/11/21/jsbj9/">
+    <link rel="canonical" href="http://yoursite-url/2022/05/21/htmlbj1/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -90,14 +90,14 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
+                              <a class="tag" href="/tags/#HTML" title="HTML">HTML</a>
                             
                         </div>
-                        <h1>0.1+0.2为什么不等于0.3</h1>
+                        <h1>script标签 defer async区别</h1>
                         <h2 class="subheading">学习经验.</h2>
                         <span class="meta">
                             Posted by Zeng Yu on
-                            2022-11-21
+                            2022-05-21
                         </span>
                     </div>
                 
@@ -216,41 +216,25 @@
 
                 <h3><span id="笔记描述">笔记描述</span></h3>
 <blockquote>
-<p>在JS内部所有的计算都是二进制方式计算的 所以 0.1+ 0.2 时要先把 0.1和 0.2 从十进制转成二进制</p>
+<p>defer和 async的使用以及区别 ,它们可以可以用于提升网页性能</p>
 </blockquote>
 <h3><span id="详细描述">详细描述</span></h3>
 <blockquote>
-<p>0.1转化成二进制的算法：<br>
-0.1<em>2=0.2======取出整数部分0<br>
-0.2</em>2=0.4======取出整数部分0<br>
-0.4<em>2=0.8======取出整数部分0<br>
-0.8</em>2=1.6======取出整数部分1<br>
-0.6<em>2=1.2======取出整数部分1<br>
-接下来会无限循环<br>
-0.2</em>2=0.4======取出整数部分0<br>
-0.4<em>2=0.8======取出整数部分0<br>
-0.8</em>2=1.6======取出整数部分1<br>
-0.6*2=1.2======取出整数部分1</p>
+<p>没有defer或async属性，浏览器会立即加载并执行相应的脚本。<br>
+不等待后续加载的文档元素，读到就开始加载和执行，此举会阻塞后续文档的加载</p>
 </blockquote>
-<p>所以0.1转化成二进制是：0.0001 1001 1001 1001…</p>
 <blockquote>
-<p>0.2转化成二进制的算法：<br>
-0.2<em>2=0.4======取出整数部分0<br>
-0.4</em>2=0.8======取出整数部分0<br>
-0.8<em>2=1.6======取出整数部分1<br>
-0.6</em>2=1.2======取出整数部分1<br>
-接下来会无限循环<br>
-0.2<em>2=0.4======取出整数部分0<br>
-0.4</em>2=0.8======取出整数部分0<br>
-0.8<em>2=1.6======取出整数部分1<br>
-0.6</em>2=1.2======取出整数部分1</p>
+<p>有了async属性，表示后续文档的加载和渲染与js脚本的加载和执行是并行进行的，即异步执行；<br>
+解析dom的同是也会加载js  等待js加载完毕就会立即执行</p>
 </blockquote>
-<p>所以0.2转化成二进制是：0.0011 0011 0011 0011…</p>
-<h3><span id="结论">结论</span></h3>
-<p>0.1+0.2 不等于 0.3 ，因为在 0.1+0.2 的计算过程中发生了两次精度丢失。第一次是在 0.1 和 0.2 转成双精度二进制浮点数时，由于二进制浮点数的小数位只能存储52位，导致小数点后第53位的数要进行为1则进1为0则舍去的操作，从而造成一次精度丢失。第二次在 0.1 和 0.2 转成二进制浮点数后，二进制浮点数相加的过程中，小数位相加导致小数位多出了一位，又要让第53位的数进行为1则进1为0则舍去的操作，又造成一次精度丢失。最终导致 0.1+0.2 不等于0.3</p>
-<p>0.1+0.2 不等于 0.3 会引起那些BUG ？<br>
-会引起统计页面展示错乱的BUG，还有 300.01 优惠300 元后，支付金额不足0.01 元等类似的BUG。</p>
-<h2><span id="可以用mathtofixed解决">可以用<code>Math.toFixed()</code>解决</span></h2>
+<blockquote>
+<p>有了defer属性，加载后续文档的过程和js脚本的加载是并行进行的，此时的js脚本仅加载不<br>
+执行, js脚本的执行需要等到文档所有元素解析完成之后事件才触发执行</p>
+</blockquote>
+<p>1.defer和async在网络加载过程是一致的，都是异步执行的；(放在页面顶部,也不会阻塞页面的加载,与页面加载同时进行)<br>
+2.两者的区别,脚本加载完成之后, async是立刻执行, defer会等一等 (等前面的defer脚本执行,等dom的加载)<br>
+3.注意的是async执行脚本时候可能代码有操作dom元素 这时候如果没解析到dom可能会出问题 因此如果操作了dom元素就不要用async</p>
+<hr>
 
                 
 
@@ -259,12 +243,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2022/12/25/reactbj2/" data-toggle="tooltip" data-placement="top" title="React路由默认选中高光">&larr; 上一个</a>
+                            <a href="/2022/06/02/jsbj5/" data-toggle="tooltip" data-placement="top" title="JS统计出现最多的字符">&larr; 上一个</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2022/11/02/jsbj6/" data-toggle="tooltip" data-placement="top" title="JS图片回显并下载">下一个 &rarr;</a>
+                            <a href="/2022/04/03/jsbj1/" data-toggle="tooltip" data-placement="top" title="JS最基础的防抖节流">下一个 &rarr;</a>
                         </li>
                     
                 </ul>
@@ -290,7 +274,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">笔记描述</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">详细描述</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">结论</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number"></span> <span class="toc-nav-text">可以用Math.toFixed()解决</span></a>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">笔记描述</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">详细描述</span></a></li></ol>
         
         </div>
       </aside>
@@ -310,7 +294,7 @@
                     <h5><a href="/tags/">知识标签</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
+                          <a class="tag" href="/tags/#HTML" title="HTML">HTML</a>
                         
                     </div>
                 </section>
