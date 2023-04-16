@@ -44,14 +44,14 @@
     </url>
 
     <url>
-        <loc>http://yoursite-url/tags/HTML/</loc>
+        <loc>http://yoursite-url/tags/WebSocket/</loc>
         <lastmod>2023-04-16T08:14:13.023Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite-url/tags/WebSocket/</loc>
+        <loc>http://yoursite-url/tags/HTML/</loc>
         <lastmod>2023-04-16T08:14:13.023Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
