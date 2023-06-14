@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          新公司实习记录 - 曾裕的博客
+          JS判断是否移动端 - 曾裕的博客
         
     </title>
 
-    <link rel="canonical" href="http://yoursite-url/2023/04/14/实习-新公司/">
+    <link rel="canonical" href="http://yoursite-url/2023/04/18/JS判断是否移动端/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -69,7 +69,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('one.jpg')
+            background-image: url('null')
             /*post*/
         
     }
@@ -90,14 +90,14 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#实习" title="实习">实习</a>
+                              <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
                             
                         </div>
-                        <h1>新公司实习记录</h1>
-                        <h2 class="subheading">在智算信息实习记录.</h2>
+                        <h1>JS判断是否移动端</h1>
+                        <h2 class="subheading">学习经验.</h2>
                         <span class="meta">
                             Posted by Zeng Yu on
-                            2023-04-14
+                            2023-04-18
                         </span>
                     </div>
                 
@@ -214,33 +214,13 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h2><span id="实习的公司">实习的公司</span></h2>
+                <h3><span id="笔记描述">笔记描述</span></h3>
 <blockquote>
-<p>实习的公司是广州智算信息科技有限公司</p>
+<p>是最基本的判断是否是移动端 通过浏览器的userAgent判断</p>
 </blockquote>
+<h3><span id="详细代码">详细代码</span></h3>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">IsPhone</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> info = navigator.userAgent;</span><br><span class="line">  <span class="comment">//通过正则表达式的test方法判断是否包含“Mobile”字符串</span></span><br><span class="line">  <span class="keyword">var</span> isPhone = <span class="regexp">/mobile/i</span>.test(info);</span><br><span class="line">  <span class="comment">//如果包含“Mobile”（是手机设备）则返回true</span></span><br><span class="line">  <span class="keyword">return</span> isPhone;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
-<h2><span id="总部报道">总部报道</span></h2>
-<hr>
-<p>第一天早上 <code>去总部报道</code> 遇到很好的HR 带我进去准备开始报道</p>
-<blockquote>
-<p>报道经历：<br>
-1.首先先把个人信息以及相关证书给HR录入<br>
-2.HR给我看了各种协议 以及我的个人求职信息是否正确 并签名<br>
-3.HR对我进行入职培训 把企业微信各个流程以及我的部门小组各负责人都过了一遍<br>
-4.填写领取电脑表 因为我是台式电脑所以只能申请笔记本 随后在总部报道完后去分部报道准备上班</p>
-</blockquote>
-<h2><span id="到分部报道">到分部报道</span></h2>
-<hr>
-<blockquote>
-<p>1.坐地铁非常挤，到了分部后 人事给我录入了进门指纹.<br>
-2.然后leader让我先安装环境 把各个环境都安装了一遍、小组用的是<code>React</code><br>
-3.配置部门的VPN 根据前辈给的gitlab和vpn账号秘钥 配置了挺久 不是很懂这个 但是还是配出来了<br>
-4.连接部门VPN 登录内网的Gitlab克隆项目 并运行起来<br>
-5.leader给我讲要做的事 刚开始看项目不是很熟悉 花了点时间请教了她  leader人说话很温柔 很热心<br>
-6.完成了任务的基本需求 也到点下班了 还有部分留到下周对接</p>
-</blockquote>
-<h2><span id="第一天结束">第一天结束</span></h2>
-<p>到下班点了 又看了四十多分钟代码 准备回家 又是挤地铁的一晚上</p>
 
                 
 
@@ -249,12 +229,12 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/2023/04/18/JS判断是否移动端/" data-toggle="tooltip" data-placement="top" title="JS判断是否移动端">&larr; 上一个</a>
+                            <a href="/2023/04/25/React展示PDF或图片资源/" data-toggle="tooltip" data-placement="top" title="React展示PDF或图片资源">&larr; 上一个</a>
                         </li>
                     
                     
                         <li class="next">
-                            <a href="/2023/03/01/[快日报]我的uni-app项目/" data-toggle="tooltip" data-placement="top" title="[快日报]我的uni-app项目">下一个 &rarr;</a>
+                            <a href="/2023/04/14/实习-新公司/" data-toggle="tooltip" data-placement="top" title="新公司实习记录">下一个 &rarr;</a>
                         </li>
                     
                 </ul>
@@ -280,7 +260,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">实习的公司</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">总部报道</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">到分部报道</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">第一天结束</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">笔记描述</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">详细代码</span></a></li></ol>
         
         </div>
       </aside>
@@ -300,7 +280,7 @@
                     <h5><a href="/tags/">知识标签</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#实习" title="实习">实习</a>
+                          <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
                         
                     </div>
                 </section>

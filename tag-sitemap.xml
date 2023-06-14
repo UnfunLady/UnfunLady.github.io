@@ -37,13 +37,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite-url/tags/React/</loc>
-        <lastmod>2023-06-14T09:21:14.170Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite-url/tags/HTML/</loc>
         <lastmod>2023-06-14T09:21:14.170Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -74,13 +67,6 @@
     <url>
         <loc>http://yoursite-url/tags/webpack/</loc>
         <lastmod>2023-06-14T09:21:14.173Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite-url/tags/JavaScript/</loc>
-        <lastmod>2023-06-14T09:21:14.174Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -123,6 +109,20 @@
     <url>
         <loc>http://yoursite-url/tags/HTTP/</loc>
         <lastmod>2023-06-14T09:21:14.189Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite-url/tags/React/</loc>
+        <lastmod>2023-06-14T09:53:42.634Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite-url/tags/JavaScript/</loc>
+        <lastmod>2023-06-14T09:54:02.327Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
