@@ -51,14 +51,14 @@
     </url>
 
     <url>
-        <loc>http://yoursite-url/tags/WebSocket/</loc>
+        <loc>http://yoursite-url/tags/TypeScript/</loc>
         <lastmod>2025-06-25T00:44:58.703Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite-url/tags/TypeScript/</loc>
+        <loc>http://yoursite-url/tags/WebSocket/</loc>
         <lastmod>2025-06-25T00:44:58.703Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
