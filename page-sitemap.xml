@@ -8,7 +8,14 @@
     
     <url>
         <loc>http://yoursite-url/about/</loc>
-        <lastmod>2025-06-27T03:02:12.516Z</lastmod>
+        <lastmod>2025-08-18T08:21:48.424Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>http://yoursite-url/archive/</loc>
+        <lastmod>2025-06-30T09:21:17.382Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -16,13 +23,6 @@
     <url>
         <loc>http://yoursite-url/tags/</loc>
         <lastmod>2025-06-25T00:44:58.906Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>http://yoursite-url/archive/</loc>
-        <lastmod>2025-06-25T00:44:58.714Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
