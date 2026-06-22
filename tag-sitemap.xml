@@ -51,14 +51,14 @@
     </url>
 
     <url>
-        <loc>http://yoursite-url/tags/TypeScript/</loc>
+        <loc>http://yoursite-url/tags/WebSocket/</loc>
         <lastmod>2025-06-25T00:44:58.703Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite-url/tags/WebSocket/</loc>
+        <loc>http://yoursite-url/tags/TypeScript/</loc>
         <lastmod>2025-06-25T00:44:58.703Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -289,15 +289,29 @@
     </url>
 
     <url>
-        <loc>http://yoursite-url/tags/JavaScript/</loc>
+        <loc>http://yoursite-url/tags/websocket/</loc>
         <lastmod>2025-08-18T08:26:07.855Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://yoursite-url/tags/websocket/</loc>
-        <lastmod>2025-08-18T08:26:07.855Z</lastmod>
+        <loc>http://yoursite-url/tags/%E8%A1%A8%E6%A0%BC/</loc>
+        <lastmod>2026-03-09T07:02:20.782Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite-url/tags/JavaScript/</loc>
+        <lastmod>2026-03-09T07:08:46.839Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite-url/tags/JSON/</loc>
+        <lastmod>2026-03-09T07:08:46.839Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
